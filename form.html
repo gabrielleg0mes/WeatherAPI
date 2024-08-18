@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form id="weather-form">
+            <input type="text" id="country" name="country" placeholder="Digite o nome do país" required>
+            <input type="submit" value="Buscar Clima">
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('weather-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const country = document.getElementById('country').value;
+
+            try {
+                const response = await fetch('/submit-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ country }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = `
+                        <h2>Clima em ${data.location}</h2>
+                        <p><strong>Descrição:</strong> ${data.weather}</p>
+                        <p><strong>Temperatura:</strong> ${data.temperature}°C</p>
+                        <p><strong>Sensação Térmica:</strong> ${data.feels_like}°C</p>
+                        <p><strong>Umidade:</strong> ${data.humidity}%</p>
+                        <p><strong>Pressão:</strong> ${data.pressure} hPa</p>
+                    `;
+                } else {
+                    document.getElementById('result').innerHTML = <p>${data.error}</p>;
+                }
+            } catch (error) {
+                document.getElementById('result').innerHTML = <p>Ocorreu um erro: ${error.message}</p>;
+            }
+        });
+    </script>
+</body>
+</html>
