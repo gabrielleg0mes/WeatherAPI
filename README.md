@@ -12,3 +12,6 @@ O Weather API é uma aplicação web projetada para consultar e exibir informaç
 ![insomnia](https://github.com/user-attachments/assets/aaa5afa8-4764-41a3-a469-bb9b524a3cbf)
 
 Utilizamos o Insomnia para validar a rota da API e garantir que a integração com o OpenWeather está funcionando conforme esperado.
+
+## Comandos para Executar o Projeto
+
