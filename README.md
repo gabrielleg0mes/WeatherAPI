@@ -29,3 +29,9 @@ Utilizamos o Insomnia para validar a rota da API e garantir que a integração c
    
    ##### npm install
 
+### Configure as Variáveis de Ambiente
+
+   Crie um arquivo .env na raiz do projeto e adicione a chave da API do OpenWeather:
+   
+   ###### OPENWEATHER_API_KEY=your_api_key_here
+
