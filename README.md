@@ -18,7 +18,7 @@ Utilizamos o Insomnia para validar a rota da API e garantir que a integração c
 ### Clone o Repositório
 
  ##### bash
-   git clone https://github.com/gabrielleg0mes/WeatherAPI
+   ##### git clone https://github.com/gabrielleg0mes/WeatherAPI
    
 ### Instale as Dependências
    Navegue até o diretório do projeto e instale as dependências:
@@ -44,3 +44,22 @@ Utilizamos o Insomnia para validar a rota da API e garantir que a integração c
    
    O servidor estará disponível em http://localhost:3000.
 
+## Cenários de Teste
+
+#### Cenário 1: Exibir Informações de Clima para uma Cidade Válida
+- Dado que o usuário está na página inicial
+- Quando o usuário insere "London" no campo de cidade
+- E clica no botão "Buscar Clima"
+- Então as informações de clima para "London" devem ser exibidas
+
+#### Cenário 2: Exibir Mensagem de Erro para uma Cidade Inválida
+- Dado que o usuário está na página inicial
+- Quando o usuário insere "CidadeInvalida" no campo de cidade
+- E clica no botão "Buscar Clima"
+- Então uma mensagem de erro deve ser exibida
+
+##### Cenário 3: Exibir Aviso se Nenhum Nome de Cidade For Inserido
+- Dado que o usuário está na página inicial
+- Quando o usuário não insere nenhum texto no campo de cidade
+- E clica no botão "Buscar Clima"
+- Então uma mensagem de aviso deve ser exibida
