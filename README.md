@@ -63,3 +63,6 @@ Utilizamos o Insomnia para validar a rota da API e garantir que a integração c
 - Quando o usuário não insere nenhum texto no campo de cidade
 - E clica no botão "Buscar Clima"
 - Então uma mensagem de aviso deve ser exibida
+
+##  Agradecimentos
+Obrigado por explorar o Weather API! Sua contribuição é essencial para o sucesso deste projeto. Se você encontrar problemas, tiver sugestões ou quiser colaborar, por favor, abra uma issue ou envie um pull request. Agradecemos sua participação e apoio!
