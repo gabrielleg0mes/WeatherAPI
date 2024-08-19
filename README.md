@@ -17,5 +17,15 @@ Utilizamos o Insomnia para validar a rota da API e garantir que a integração c
 
 ### Clone o Repositório
 
- bash
+ ##### bash
    git clone https://github.com/gabrielleg0mes/WeatherAPI
+   
+### Instale as Dependências
+   Navegue até o diretório do projeto e instale as dependências:
+   
+   ##### bash
+   
+   ##### cd weather-api
+   
+   ##### npm install
+
