@@ -4,4 +4,7 @@
 
 ![imagem_da_tela](https://github.com/user-attachments/assets/4a4947cb-f21a-4353-aac0-6eb03184b463)
 
+## Descrição do Projeto
+O Weather API é uma aplicação web projetada para consultar e exibir informações meteorológicas baseadas no nome de um país. A aplicação utiliza o Express para fazer chamadas à API do OpenWeather, fornecendo dados detalhados sobre o clima, incluindo a descrição do tempo, temperatura, umidade e pressão atmosférica. É um excelente projeto para quem deseja aprender sobre integração de APIs e desenvolvimento de aplicações web com Node.js e Express.
+
 
